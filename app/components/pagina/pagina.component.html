@@ -1,0 +1,27 @@
+<app-slider [nombre]="'Página'"> </app-slider> <!-- directiva input -->
+
+<div class="center">
+  <section id="content">
+
+    <h1 class="subheader">Página de pruebas</h1>
+
+    <div *ngIf="nombre && apellido; then siHayParametros else noHayParametros">
+      <!-- directiva condicional -->
+    </div>
+
+    <ng-template #siHayParametros>
+      <h2>Su nombre es: {{nombre}}</h2>
+      <h2>Su apellido es: {{apellido}}</h2>
+    </ng-template>
+
+    <ng-template #noHayParametros>
+      <!-- template para el else -->
+      <h2>No hay parametros por la url</h2>
+    </ng-template>
+
+    <button (click)='redireccion()'>Ponme mi nombre y apellido</button>
+
+  </section>
+
+  <app-sidebar></app-sidebar>
+</div>
