@@ -9,7 +9,7 @@ import { Pelicula } from '../../models/pelicula';
 export class PeliculaComponent implements OnInit {
 
   @Input() pelicula: Pelicula;
-  @Output() MarcarFavorita = new EventEmitter();
+  @Output() MarcarFavorita = new EventEmitter(); // creando un nuevo evento
 
   constructor() { }
 
