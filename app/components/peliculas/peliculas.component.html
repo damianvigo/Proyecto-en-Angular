@@ -8,7 +8,7 @@
         Pelicula Favorita
       </h2>
       <h4>
-        {{favorita.title}} 
+        {{favorita.title}}
       </h4>
       <h4>
         {{favorita.year | espar}}
@@ -16,9 +16,9 @@
       <h5>{{this.fecha | date: 'fullDate'}}</h5> <!-- | date: 'short' | date: 'dd/MM/yy'  PIPES -->
     </div>
 
-<h1 class="subheader">Peliculas</h1>
+    <h1 class="subheader">Peliculas</h1>
 
-<!-- <h2>{{titulo}}</h2>
+    <!-- <h2>{{titulo}}</h2>
 <button (click)='cambiarTitulo()'>Pulsame</button>
 <hr>
 
@@ -44,18 +44,16 @@
 <h2 class="subheader">Listado de peliculas</h2> -->
 
 
-<div id="articles" *ngIf="peliculas">
+    <div id="articles" *ngIf="peliculas">
 
-  <div *ngFor="let pelicula of peliculas; let i = index;" > <!-- directiva estructural *ngFor -->
-    <app-pelicula
-      [pelicula]="pelicula"
-      (MarcarFavorita)="mostrarFavorita($event)"
-    ></app-pelicula>
-  </div>
-  <!-- Añadir Articulos via JS -->
-</div>
+      <div *ngFor="let pelicula of peliculas; let i = index;">
+        <!-- directiva estructural *ngFor -->
+        <app-pelicula [pelicula]="pelicula" (MarcarFavorita)="mostrarFavorita($event)"></app-pelicula>
+      </div>
+      <!-- Añadir Articulos via JS -->
+    </div>
 
-</section>
-  
-<app-sidebar></app-sidebar>
+  </section>
+
+  <app-sidebar></app-sidebar>
 </div>
